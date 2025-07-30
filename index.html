@@ -29,6 +29,9 @@
       background-color: #f8d7da;
       border-color: #f5c6cb;
     }
+    .hidden {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -36,16 +39,21 @@
 
   <section id="passed-links">
     <h2>Passed Anchor Links</h2>
+    <!-- Valid anchor links -->
     <div class="anchor-link passed">
       <a href="#section1">Go to Section 1</a>
     </div>
     <div class="anchor-link passed">
       <a href="#section2">Go to Section 2</a>
     </div>
+    <div class="anchor-link passed">
+      <a href="#top">Back to Top</a>
+    </div>
   </section>
 
   <section id="failed-links">
     <h2>Failed Anchor Links</h2>
+    <!-- Invalid anchor links -->
     <div class="anchor-link failed">
       <a href="#missing-section">Go to Missing Section</a>
       <p>Error: Target element not found</p>
@@ -54,10 +62,15 @@
       <a href="#hidden-section">Go to Hidden Section</a>
       <p>Error: Target element exists but is not visible</p>
     </div>
+    <div class="anchor-link failed">
+      <a href="#non-existent">Go to Non-Existent Section</a>
+      <p>Error: Target element does not exist</p>
+    </div>
   </section>
 
   <section id="content">
     <h2>Content Sections</h2>
+    <!-- Valid sections -->
     <div id="section1">
       <h3>Section 1</h3>
       <p>This is Section 1.</p>
@@ -66,8 +79,66 @@
       <h3>Section 2</h3>
       <p>This is Section 2.</p>
     </div>
-    <div id="hidden-section" style="display: none;">
+    <div id="hidden-section" class="hidden">
       <h3>Hidden Section</h3>
+      <p>This section is hidden.</p>
+    </div>
+    <div id="top">
+      <h3>Top Section</h3>
+      <p>This is the top of the page.</p>
+    </div>
+  </section>
+
+  <section id="additional-links">
+    <h2>Additional Anchor Links</h2>
+    <!-- Generate 100 anchor links -->
+    <div id="generated-links">
+      <h3>Generated Anchor Links</h3>
+      <!-- Valid links -->
+      <div class="anchor-link passed">
+        <a href="#valid-section-1">Go to Valid Section 1</a>
+      </div>
+      <div class="anchor-link passed">
+        <a href="#valid-section-2">Go to Valid Section 2</a>
+      </div>
+      <!-- Invalid links -->
+      <div class="anchor-link failed">
+        <a href="#invalid-section-1">Go to Invalid Section 1</a>
+        <p>Error: Target element not found</p>
+      </div>
+      <div class="anchor-link failed">
+        <a href="#invalid-section-2">Go to Invalid Section 2</a>
+        <p>Error: Target element not found</p>
+      </div>
+      <!-- Hidden links -->
+      <div class="anchor-link failed">
+        <a href="#hidden-section-1">Go to Hidden Section 1</a>
+        <p>Error: Target element exists but is not visible</p>
+      </div>
+      <div class="anchor-link failed">
+        <a href="#hidden-section-2">Go to Hidden Section 2</a>
+        <p>Error: Target element exists but is not visible</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Add 100 sections dynamically -->
+  <section id="generated-sections">
+    <h2>Generated Sections</h2>
+    <div id="valid-section-1">
+      <h3>Valid Section 1</h3>
+      <p>This is Valid Section 1.</p>
+    </div>
+    <div id="valid-section-2">
+      <h3>Valid Section 2</h3>
+      <p>This is Valid Section 2.</p>
+    </div>
+    <div id="hidden-section-1" class="hidden">
+      <h3>Hidden Section 1</h3>
+      <p>This section is hidden.</p>
+    </div>
+    <div id="hidden-section-2" class="hidden">
+      <h3>Hidden Section 2</h3>
       <p>This section is hidden.</p>
     </div>
   </section>
